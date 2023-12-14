@@ -37,6 +37,8 @@ You can also choose a license to set the user privileges others will have with y
 Once you finished creating the repository, it is time to create a copy of it on your machine. For that, on the code page of your repository, click on the green button that says ```code```.
 After that, copy the HTTPS link that will be generated.
 
+Note: the link you copy might change depending on the repository. Many times, for companies, they require you to clone the repository with SSH.
+
 <img src="3.png" />
 
 In your computer and in the folder you want your project to be on, open a terminal.
