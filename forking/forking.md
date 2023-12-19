@@ -81,48 +81,64 @@ We need to get a copy of the main branch from the parent repository into our loc
 
 # IMAGE
 
-Step 5. git branch --set-upstream-to upstream/main
+Step 5. Now before we create a new branch, we will set it's parent to reflect on the upstream with the command ```git branch --set-upstream-to upstream/main```
 
 # IMAGE
 
-Step 6. git checkout -b issue/num-description
+Step 6. Create the branch and enter it with the command ```git checkout -b branchname```. For CDL, you will likely be working on an issue so follow the pattern of ```issue/description-of-issue```
 
 # IMAGE
 
-Step 7. Add files
+Step 7. Add files with ```git add .```
 
 # IMAGE
 
-Step 8. git push -u origin branch-name
+Step 8. Now to push we will do ```git push -u origin branch-name```. The ```-u``` option automatically sets the upstream. That way, in the future, Git "knows" where you want to push to and where you want to pull from, so you can use git pull or git push without arguments.
 
 # IMAGE
 
-Step 9. open pr
-
-Special Verison for Two People
+Step 9. Open a pull-request in the main repository.
 
 
-two people: (working on somebody else's fork)
-git remote add name (elias) location (elias' fork)
-git fetch elias
-git checkout branch-name (might have to specify the fork, call for help)
-git commit, git push
+## Special Version for Two People
+
+If you are ever in a situation where there are two people working on the same part of the project
+
+Step 0. Choose which fork will be the main fork. Do rock paper scissors or something to decide one fork only.
+
+If you are the person who will have the main work, go ahead and create the branch for your peer. If not, then keep following this tutorial.
+
+Step 1. In your terminal, do ```git remote add person-name <fork url>``` to make a connection with their fork. For example, if I am working with Bob (username is bobiscool) on a project, I would do ```git remote add bob github.com/bobiscool/Obojobo```.
+
+# IMAGE
+
+To check if the command work, run ```git remote show -n```, you should see ```origin```, ```upstream``` and that person's name (in my case, ```bob```)
+
+# IMAGE
+
+Step 2. Get the branches from the fork, run ```git fetch person-name```
+
+We need to get the branch we will be working on.
+
+# IMAGE
+
+Step 3. Now, check out the branch with ```git checkout branch-name```. Here you might have to specify the fork, so this is the perfect time to reach out for help!
+
+Step 4. Work on the files and follow the same commands as you are used to
+
 
 ### GLOSSARY OF TERMS
-- fork:
--
+- fork: copy of a repository into your github account
+- upstream: parent of the fork
 
 ### LIST OF COMMANDS
-- git remote show -n
-- git remote add name (upstream) location (main repo url)
-- git remote show
-- git fetch upstream
-- git branch --set-upstream-to upstream/main
-- git status
-- git checkout -b issue/num-description
-- git commit
-- git push -u origin branch-name
-- git remote add name (elias) location (elias' fork)
-- git fetch elias
-- git checkout branch-name (might have to specify the fork, call for help)
-- git commit, git push
+- ```git remote show -n```
+- ```git remote add name (upstream) location (main repo url)```
+- ```git remote show```
+- ```git fetch upstream```
+- ```git branch --set-upstream-to upstream/main```
+- ```git status```
+- ```git checkout -b issue/num-description```
+- ```git commit```
+- ```git push -u origin branch-name```
+
